@@ -4,7 +4,7 @@
     <PackageId>Iirc.Utils.Gurobi</PackageId>
     <Version>0.1.0</Version>
     <Authors>István Módos</Authors>
-    <Company>IIRC</Company>
+    <Company>Czech Technical University in Prague</Company>
     <IncludeSymbols>true</IncludeSymbols>
     <IncludeSource>true</IncludeSource>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>

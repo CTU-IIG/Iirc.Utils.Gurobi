@@ -173,6 +173,18 @@ namespace Iirc.Utils.Gurobi
             pairNonZero = default(KeyValuePair<T, GRBVar>);
             return false;
         }
+        
+        public static IEnumerable<int> WhereNonZero(this IList<GRBVar> list, Func<GRBVar, double> valueSelector = null)
+        {
+            var comparer = NumericComparer.Default;
+            for (var i = 0; i < list.Count; i++)
+            {
+                if (comparer.AreEqual(list[i].ToDouble(valueSelector), 0.0) == false)
+                {
+                    yield return i;
+                }
+            }
+        }
 
         public static IDictionary<T, GRBVar> WhereNonZero<T>(
             this IDictionary<T, GRBVar> dict,

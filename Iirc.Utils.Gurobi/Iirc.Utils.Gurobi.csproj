@@ -13,8 +13,8 @@
     <Reference Include="gurobi80.netstandard20, Version=8.0.0.0, Culture=neutral, PublicKeyToken=21e2c4b1860157bc">
       <HintPath>$(GUROBI_HOME)\lib\gurobi80.netstandard20.dll</HintPath>
     </Reference>
-    <Reference Include="Iirc.Utils, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\Iirc.Utils\Iirc.Utils\bin\Release\netcoreapp2.1\Iirc.Utils.dll</HintPath>
-    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Iirc.Utils" Version="0.1.0" />
   </ItemGroup>
 </Project>

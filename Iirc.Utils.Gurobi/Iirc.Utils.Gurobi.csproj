@@ -12,11 +12,11 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="gurobi80.netstandard20, Version=8.0.0.0, Culture=neutral, PublicKeyToken=21e2c4b1860157bc">
-      <HintPath>$(GUROBI_HOME)\lib\gurobi80.netstandard20.dll</HintPath>
+    <Reference Include="gurobi81.netstandard20, Version=8.1.0.0, Culture=neutral, PublicKeyToken=21e2c4b1860157bc">
+      <HintPath>$(GUROBI_HOME)\lib\gurobi81.netstandard20.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Iirc.Utils" Version="0.1.0" />
+    <PackageReference Include="Iirc.Utils" Version="0.2.0" />
   </ItemGroup>
 </Project>

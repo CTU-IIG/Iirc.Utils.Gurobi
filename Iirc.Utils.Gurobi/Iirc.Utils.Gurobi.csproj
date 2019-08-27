@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <PackageId>Iirc.Utils.Gurobi</PackageId>
-    <Version>0.2.0</Version>
+    <Version>0.3.0</Version>
     <Authors>István Módos</Authors>
     <Company>Czech Technical University in Prague</Company>
     <RepositoryUrl>https://github.com/CTU-IIG/Iirc.Utils.Gurobi</RepositoryUrl>

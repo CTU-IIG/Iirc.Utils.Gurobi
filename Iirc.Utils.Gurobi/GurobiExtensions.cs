@@ -148,7 +148,7 @@ namespace Iirc.Utils.Gurobi
                 index++;
             }
 
-            index = default(int);
+            index = default;
             return false;
         }
 
@@ -176,7 +176,7 @@ namespace Iirc.Utils.Gurobi
                 }
             }
 
-            pairNonZero = default(KeyValuePair<T, GRBVar>);
+            pairNonZero = default;
             return false;
         }
         
@@ -199,6 +199,39 @@ namespace Iirc.Utils.Gurobi
             var comparer = NumericComparer.Default;
             return new Dictionary<T, GRBVar>(dict
                 .Where(pair => comparer.AreEqual(pair.Value.ToDouble(valueSelector), 0.0) == false));
+        }
+        
+        public static bool TryWhereNonZero(
+            this TranslatedArray<GRBVar> variables,
+            out int index,
+            Func<GRBVar, double> valueSelector = null)
+        {
+            var comparer = NumericComparer.Default;
+            index = default;
+            foreach (var i in variables.Indices)
+            {
+                if (comparer.AreEqual(variables[i].ToDouble(valueSelector), 0.0) == false)
+                {
+                    index = i;
+                    return true;
+                }
+            }
+
+            return false;
+        }
+        
+        public static IEnumerable<int> WhereNonZero(
+            this TranslatedArray<GRBVar> array,
+            Func<GRBVar, double> valueSelector = null)
+        {
+            var comparer = NumericComparer.Default;
+            foreach (var i in array.Indices)
+            {
+                if (comparer.AreEqual(array[i].ToDouble(valueSelector), 0.0) == false)
+                {
+                    yield return i;
+                }
+            }
         }
     }
 }

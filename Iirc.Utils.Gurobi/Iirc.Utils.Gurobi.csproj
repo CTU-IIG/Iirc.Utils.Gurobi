@@ -17,6 +17,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Iirc.Utils" Version="0.2.0" />
+    <PackageReference Include="Iirc.Utils" Version="0.6.0" />
   </ItemGroup>
 </Project>

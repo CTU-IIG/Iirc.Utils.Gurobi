@@ -233,5 +233,31 @@ namespace Iirc.Utils.Gurobi
                 }
             }
         }
+        
+        public static IEnumerable<int> WhereTrue(
+            this TranslatedArray<GRBVar> array,
+            Func<GRBVar, double> valueSelector = null)
+        {
+            foreach (var i in array.Indices)
+            {
+                if (array[i].ToDouble(valueSelector) >= 0.5)
+                {
+                    yield return i;
+                }
+            }
+        }
+        
+        public static IEnumerable<int> WhereFalse(
+            this TranslatedArray<GRBVar> array,
+            Func<GRBVar, double> valueSelector = null)
+        {
+            foreach (var i in array.Indices)
+            {
+                if (array[i].ToDouble(valueSelector) < 0.5)
+                {
+                    yield return i;
+                }
+            }
+        }
     }
 }

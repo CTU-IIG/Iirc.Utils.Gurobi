@@ -11,9 +11,19 @@
     <IncludeSource>true</IncludeSource>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
-  <ItemGroup>
+  <ItemGroup Condition="Exists('$(GUROBI_HOME)\lib\gurobi81.netstandard20.dll')">
     <Reference Include="gurobi81.netstandard20, Version=8.1.0.0, Culture=neutral, PublicKeyToken=21e2c4b1860157bc">
       <HintPath>$(GUROBI_HOME)\lib\gurobi81.netstandard20.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup Condition="Exists('$(GUROBI_HOME)\lib\gurobi90.netstandard20.dll')">
+    <Reference Include="gurobi90.netstandard20, Version=9.0.0.0, Culture=neutral, PublicKeyToken=21e2c4b1860157bc">
+      <HintPath>$(GUROBI_HOME)\lib\gurobi90.netstandard20.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup Condition="Exists('$(GUROBI_HOME)\lib\gurobi91.netstandard20.dll')">
+    <Reference Include="gurobi91.netstandard20, Version=9.1.0.0, Culture=neutral, PublicKeyToken=21e2c4b1860157bc">
+      <HintPath>$(GUROBI_HOME)\lib\gurobi91.netstandard20.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
